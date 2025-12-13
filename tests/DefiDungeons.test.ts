@@ -2,12 +2,18 @@
 import { describe, expect, it } from "vitest";
 import { Cl } from "@stacks/transactions";
 
-const accounts = simnet.getAccounts();
-const wallet1 = accounts.get("wallet_1")!;
-const deployer = accounts.get("deployer")!;
+// Top-level usage removed. Initialized in tests.
 
 describe("DefiDungeons Professional Tests", () => {
-  it("ensures simnet is well initialised", () => {
+  let accounts: any;
+  let deployer: any;
+  let wallet1: any;
+
+  // Initialize accounts inside the test suite, as simnet is available here
+  it("initializes accounts", () => {
+    accounts = simnet.getAccounts();
+    deployer = accounts.get("deployer")!;
+    wallet1 = accounts.get("wallet_1")!;
     expect(simnet.blockHeight).toBeDefined();
   });
 
