@@ -1,9 +1,9 @@
 
 import { describe, expect, it } from "vitest";
+import { Cl } from "@stacks/transactions";
 
 const accounts = simnet.getAccounts();
 const wallet1 = accounts.get("wallet_1")!;
-const wallet2 = accounts.get("wallet_2")!;
 const deployer = accounts.get("deployer")!;
 
 describe("DefiDungeons Professional Tests", () => {
@@ -17,11 +17,11 @@ describe("DefiDungeons Professional Tests", () => {
       "DefiDungeons",
       "set-dungeon-manifest",
       [
-        simnet.mcv.stringAscii(newManifest) // Clarity 4 / SDK usage
+        Cl.stringAscii(newManifest)
       ],
       deployer
     );
-    expect(result).toBeOk(simnet.mcv.bool(true));
+    expect(result).toBeOk(Cl.bool(true));
 
     // Verify change
     const read = simnet.callReadOnlyFn(
@@ -30,39 +30,39 @@ describe("DefiDungeons Professional Tests", () => {
       [],
       deployer
     );
-    expect(read.result).toBeOk(simnet.mcv.stringAscii(newManifest));
+    expect(read.result).toBeOk(Cl.stringAscii(newManifest));
   });
 
   it("should fail when non-admin sets manifest", () => {
     const { result } = simnet.callPublicFn(
       "DefiDungeons",
       "set-dungeon-manifest",
-      [simnet.mcv.stringAscii("Hacked!")],
+      [Cl.stringAscii("Hacked!")],
       wallet1
     );
-    expect(result).toBeErr(simnet.mcv.uint(1004)); // ERR-NOT-CONTRACT-OWNER
+    expect(result).toBeErr(Cl.uint(1004)); // ERR-NOT-CONTRACT-OWNER
   });
 
   it("should allow crafting an item (list operation)", () => {
-    const materials = [simnet.mcv.uint(5), simnet.mcv.uint(6)];
+    const materials = [Cl.uint(5), Cl.uint(6)];
     const { result } = simnet.callPublicFn(
       "DefiDungeons",
       "craft-item",
-      [simnet.mcv.list(materials)],
+      [Cl.list(materials)],
       wallet1
     );
     // 5 + 6 = 11 > 10 => Legendary
-    expect(result).toBeOk(simnet.mcv.stringAscii("Legendary Item Crafted")); // Assuming contracts returns string-ascii, actually literal string in Clarity is ascii/utf8 depending on syntax, usually ascii for simple quotes.
+    expect(result).toBeOk(Cl.stringAscii("Legendary Item Crafted"));
   });
 
   it("should craft common item for low power", () => {
-    const materials = [simnet.mcv.uint(2), simnet.mcv.uint(3)];
+    const materials = [Cl.uint(2), Cl.uint(3)];
     const { result } = simnet.callPublicFn(
       "DefiDungeons",
       "craft-item",
-      [simnet.mcv.list(materials)],
+      [Cl.list(materials)],
       wallet1
     );
-    expect(result).toBeOk(simnet.mcv.stringAscii("Common Item Crafted"));
+    expect(result).toBeOk(Cl.stringAscii("Common Item Crafted"));
   });
 });
