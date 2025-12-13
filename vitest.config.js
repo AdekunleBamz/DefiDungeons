@@ -1,8 +1,8 @@
 
 /// <reference types="vitest" />
 
-import { defineConfig } from "vite";
-import { vitestSetupFilePath, getClarinetVitestsArgv } from "@hirosystems/clarinet-sdk/vitest";
+import { defineConfig } from "vitest/config";
+import { vitestSetupFilePath, getClarinetVitestsArgv } from "@stacks/clarinet-sdk/vitest";
 
 /*
   In this file, Vitest is configured so that it works seamlessly with Clarinet and the Simnet.
@@ -21,13 +21,14 @@ import { vitestSetupFilePath, getClarinetVitestsArgv } from "@hirosystems/clarin
 
 export default defineConfig({
   test: {
-    environment: "clarinet", // use vitest-environment-clarinet
+    // environment: "clarinet", // Removed legacy environment
     pool: "forks",
     poolOptions: {
       threads: { singleThread: true },
       forks: { singleFork: true },
     },
     setupFiles: [
+      "./tests/setup.ts",
       vitestSetupFilePath,
       // custom setup files can be added here
     ],
