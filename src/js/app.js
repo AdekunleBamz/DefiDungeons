@@ -1,9 +1,13 @@
 import { authenticate, userSession } from './wallet.js';
 import { enterDungeon, completeDungeon, craftItem } from './transactions.js';
 import { fetchPlayerStats } from './stats.js';
+import { connectToChainhooks } from './chainhooks.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DefiDungeons App Initialized');
+
+    // Initialize Chainhooks
+    connectToChainhooks();
 
     if (userSession.isUserSignedIn()) {
         console.log('User signed in');
