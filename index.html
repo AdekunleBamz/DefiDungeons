@@ -24,7 +24,21 @@
             </div>
         </div>
     </header>
-    <div id="app"></div>
+    <div id="app">
+        <main class="dungeon-dashboard">
+            <section id="dungeon-entry" class="section">
+                <h2>Enter the Dungeon</h2>
+                <p>Pay 100 Tokens to enter. Survive and earn rewards.</p>
+                <button id="btn-enter-dungeon" class="btn btn-primary btn-lg">Enter Dungeon (100 TKN)</button>
+            </section>
+
+            <section id="dungeon-active" class="section hidden">
+                <h2>Dungeon Active</h2>
+                <p>You are exploring...</p>
+                <button id="btn-complete-dungeon" class="btn btn-secondary btn-lg">Complete & Claim</button>
+            </section>
+        </main>
+    </div>
     <script type="module" src="/src/js/app.js"></script>
 </body>
 
