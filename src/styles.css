@@ -74,3 +74,91 @@ input, button, textarea, select {
   align-items: center;
   gap: 1rem;
 }
+
+/* Layout */
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+/* Buttons */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Dungeon Dashboard */
+.dungeon-dashboard {
+  display: grid;
+  gap: 2rem;
+}
+
+.section h2 {
+  color: #a855f7;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Forms */
+.input-field {
+  padding: 0.5rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #222;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.crafting-controls {
+  display: flex;
+  align-items: center;
+}
