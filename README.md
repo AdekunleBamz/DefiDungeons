@@ -64,3 +64,11 @@ MIT
    ```
 
 3. Open `http://localhost:5173`.
+
+## Chainhooks (Event Monitoring)
+
+1. Configure hooks in `chainhooks/config.json`.
+2. Run listener:
+   ```bash
+   node server/listener.js
+   ```
