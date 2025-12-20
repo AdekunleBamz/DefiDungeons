@@ -1,22 +1,40 @@
 {
-    "chainhooks": {
-        "dungeon-entry": {
-            "name": "dungeon-entry",
-            "networks": {
-                "testnet": {
-                    "if_this": {
-                        "scope": "contract_call",
-                        "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.DefiDungeons",
-                        "method": "enter-dungeon"
-                    },
-                    "then_that": {
-                        "http_post": {
-                            "url": "http://localhost:3000/api/events",
-                            "authorization_header": "Bearer secret-token"
-                        }
-                    }
-                }
+  "chainhooks": {
+    "dungeon-entry": {
+      "name": "dungeon-entry",
+      "networks": {
+        "testnet": {
+          "if_this": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.DefiDungeons",
+            "method": "enter-dungeon"
+          },
+          "then_that": {
+            "http_post": {
+              "url": "http://localhost:3000/api/events",
+              "authorization_header": "Bearer secret-token"
             }
+          }
         }
+      }
+    },
+    "dungeon-complete": {
+      "name": "dungeon-complete",
+      "networks": {
+        "testnet": {
+          "if_this": {
+            "scope": "contract_call",
+            "contract_identifier": "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.DefiDungeons",
+            "method": "complete-dungeon"
+          },
+          "then_that": {
+            "http_post": {
+              "url": "http://localhost:3000/api/events",
+              "authorization_header": "Bearer secret-token"
+            }
+          }
+        }
+      }
     }
+  }
 }
