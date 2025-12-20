@@ -147,3 +147,18 @@ input, button, textarea, select {
   color: #888;
   font-size: 0.9rem;
 }
+
+/* Forms */
+.input-field {
+  padding: 0.5rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #222;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.crafting-controls {
+  display: flex;
+  align-items: center;
+}
