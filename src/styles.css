@@ -122,3 +122,28 @@ input, button, textarea, select {
   color: #ccc;
   margin-bottom: 1.5rem;
 }
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.9rem;
+}
