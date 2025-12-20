@@ -38,3 +38,29 @@ export function enterDungeon() {
 
     openContractCall(options);
 }
+
+export function completeDungeon() {
+    const tokenAddress = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9';
+    const tokenName = 'my-token';
+
+    const options = {
+        contractAddress: CONTRACT_ADDRESS,
+        contractName: CONTRACT_NAME,
+        functionName: 'complete-dungeon',
+        functionArgs: [
+            contractPrincipalCV(tokenAddress, tokenName)
+        ],
+        postConditionMode: PostConditionMode.Allow,
+        network,
+        appDetails: {
+            name: 'DefiDungeons',
+            icon: window.location.origin + '/logo.png',
+        },
+        onFinish: (data) => {
+            console.log('Transaction submitted:', data.txId);
+            window.open(`https://explorer.hiro.so/txid/${data.txId}?chain=testnet`, '_blank');
+        },
+    };
+
+    openContractCall(options);
+}
