@@ -1,5 +1,5 @@
 import { authenticate, userSession } from './wallet.js';
-import { enterDungeon, completeDungeon } from './transactions.js';
+import { enterDungeon, completeDungeon, craftItem } from './transactions.js';
 import { fetchPlayerStats } from './stats.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -47,6 +47,19 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (completeBtn) {
         completeBtn.addEventListener('click', () => {
             completeDungeon();
+        });
+    }
+
+    const craftBtn = document.getElementById('btn-craft');
+    if (craftBtn) {
+        craftBtn.addEventListener('click', () => {
+            const m1 = document.getElementById('material-input-1').value;
+            const m2 = document.getElementById('material-input-2').value;
+            if (m1 && m2) {
+                craftItem([parseInt(m1), parseInt(m2)]);
+            } else {
+                alert('Please enter material IDs');
+            }
         });
     }
 });
