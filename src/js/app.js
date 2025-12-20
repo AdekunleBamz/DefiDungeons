@@ -2,6 +2,7 @@ import { authenticate, userSession } from './wallet.js';
 import { enterDungeon, completeDungeon, craftItem } from './transactions.js';
 import { fetchPlayerStats } from './stats.js';
 import { connectToChainhooks } from './chainhooks.js';
+import './notifications.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DefiDungeons App Initialized');
