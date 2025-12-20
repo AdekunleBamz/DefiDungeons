@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="DefiDungeons - Professional Stacks Blockchain Game. Stake, Battle, Earn." />
+    <meta property="og:title" content="DefiDungeons" />
+    <meta property="og:description"
+        content="Enter the dungeon if you dare. A decentralized gaming experience on Stacks." />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <title>DefiDungeons</title>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo">DefiDungeons</div>
+        <div id="wallet-section">
+            <button id="connect-wallet" class="btn btn-primary">Connect Wallet</button>
+            <div id="wallet-info" class="hidden">
+                <span id="stx-address"></span>
+                <button id="disconnect-wallet" class="btn btn-secondary">Disconnect</button>
+            </div>
+        </div>
+    </header>
+    <div id="app">
+        <main class="dungeon-dashboard">
+            <section id="dungeon-entry" class="section">
+                <h2>Enter the Dungeon</h2>
+                <p>Pay 100 Tokens to enter. Survive and earn rewards.</p>
+                <button id="btn-enter-dungeon" class="btn btn-primary btn-lg">Enter Dungeon (100 TKN)</button>
+            </section>
+
+            <section id="dungeon-active" class="section hidden">
+                <h2>Dungeon Active</h2>
+                <p>You are exploring...</p>
+                <button id="btn-complete-dungeon" class="btn btn-secondary btn-lg">Complete & Claim</button>
+            </section>
+
+            <section id="player-stats" class="section">
+                <h2>Player Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-xp">0</div>
+                        <div class="stat-label">XP</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-dungeons">0</div>
+                        <div class="stat-label">Dungeons</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="stat-rewards">0</div>
+                        <div class="stat-label">Rewards Earned</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="crafting" class="section">
+                <h2>Crafting</h2>
+                <p>Combine materials to craft items (Demo: Sum IDs > 10).</p>
+                <div class="crafting-controls">
+                    <input type="number" id="material-input-1" class="input-field" placeholder="Mat ID 1" value="5" />
+                    <input type="number" id="material-input-2" class="input-field" placeholder="Mat ID 2" value="6" />
+                    <button id="btn-craft" class="btn btn-primary">Craft Item</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="/src/js/app.js"></script>
+</body>
+
+</html>

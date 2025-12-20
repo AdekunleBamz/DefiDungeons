@@ -51,3 +51,24 @@ npm run test
 ## License
 
 MIT
+## Frontend Development
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open `http://localhost:5173`.
+
+## Chainhooks (Event Monitoring)
+
+1. Configure hooks in `chainhooks/config.json`.
+2. Run listener:
+   ```bash
+   node server/listener.js
+   ```

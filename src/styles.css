@@ -1,0 +1,164 @@
+/* Modern CSS Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: #0d0d0d;
+  color: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* Header & Wallet */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: #a855f7;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #9333ea;
+}
+
+.btn-secondary {
+  background-color: #333;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #444;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#wallet-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Layout */
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+/* Buttons */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Dungeon Dashboard */
+.dungeon-dashboard {
+  display: grid;
+  gap: 2rem;
+}
+
+.section h2 {
+  color: #a855f7;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #222;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #a855f7;
+}
+
+.stat-label {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Forms */
+.input-field {
+  padding: 0.5rem;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #222;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.crafting-controls {
+  display: flex;
+  align-items: center;
+}
