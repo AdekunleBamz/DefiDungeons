@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@stacks/clarinet-sdk": "^3.10.0",
+    "@stacks/connect": "^8.2.4",
     "@stacks/transactions": "^7.0.0",
     "chokidar-cli": "^3.0.0",
     "typescript": "^5.3.3",
