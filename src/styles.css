@@ -74,3 +74,18 @@ input, button, textarea, select {
   align-items: center;
   gap: 1rem;
 }
+
+/* Layout */
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
