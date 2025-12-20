@@ -1,15 +1,14 @@
 import { authenticate, userSession } from './wallet.js';
+import { enterDungeon, completeDungeon } from './transactions.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('DefiDungeons App Initialized');
 
     if (userSession.isUserSignedIn()) {
         console.log('User signed in');
-        // document.getElementById('wallet-section').classList.add('connected');
         document.getElementById('connect-wallet').classList.add('hidden');
         document.getElementById('wallet-info').classList.remove('hidden');
 
-        // Display address (Mainnet default, todo: network switch)
         try {
             const userData = userSession.loadUserData();
             const address = userData.profile.stxAddress.mainnet || userData.profile.stxAddress.testnet;
@@ -30,6 +29,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (disconnectBtn) {
         disconnectBtn.addEventListener('click', () => {
             userSession.signUserOut('/');
+        });
+    }
+
+    const enterBtn = document.getElementById('btn-enter-dungeon');
+    if (enterBtn) {
+        enterBtn.addEventListener('click', () => {
+            enterDungeon();
+        });
+    }
+
+    const completeBtn = document.getElementById('btn-complete-dungeon');
+    if (completeBtn) {
+        completeBtn.addEventListener('click', () => {
+            completeDungeon();
         });
     }
 });
