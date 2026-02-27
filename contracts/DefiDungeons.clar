@@ -199,6 +199,21 @@
     (ok (var-get dungeon-manifest))
 )
 
+;; @desc Get contract version
+(define-read-only (get-contract-version)
+    (ok "1.1.0")
+)
+
+;; @desc Get contract owner
+(define-read-only (get-contract-owner)
+    (ok (var-get contract-owner))
+)
+
+;; @desc Get entry cost
+(define-read-only (get-entry-cost)
+    (ok ENTRY_COST)
+)
+
 ;; --------------------------------------------------------------------------
 ;; Ownership Transfer (Standard 2-Step)
 ;; --------------------------------------------------------------------------
